@@ -19,4 +19,33 @@ body {
     background: white;
     box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
     border-radius: 8px;
+    margin-bottom: 40px;
+    position: relative;
+}
+
+.popup {
+    position: absolute;
+    padding: 9px;
+    width: 30em;
+    background: white;
+    box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+    z-index: 1060;
+    border-radius: 8px;
+    font-size: 12px;
+}
+
+.popup p {
+    margin: 0;
+}
+
+.popup:before {
+    content: "";
+    position: absolute;
+    display: block;
+    border: 13px solid white;
+    top: 16px;
+    left: -24px;
+    border-left-color: transparent;
+    border-top-color: transparent;
+    border-bottom-color: transparent;
 }

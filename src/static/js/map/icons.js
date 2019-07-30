@@ -11,7 +11,8 @@ import { Vector as VectorLayer } from 'ol/layer';
  */
 function createIcon(place) {
     const icon = new Feature({
-        geometry: new Point(fromLonLat(place.geometry.coordinates))
+        geometry: new Point(fromLonLat(place.geometry.coordinates)),
+        place
     })
 
     icon.setStyle(new Style({
@@ -30,15 +31,15 @@ function createIcon(place) {
  */
 async function getVectorLayer() {
 
-    let places = await fetch('/lugares/')
+    const places = await fetch('/lugares/')
                 .then(resp => resp.json())
                 .then(data => data.features )
 
-    let vectorSource = new VectorSource({
+    const vectorSource = new VectorSource({
         features: places.map(createIcon)
     });
 
-    let vectorLayer = new VectorLayer({
+    const vectorLayer = new VectorLayer({
         source: vectorSource
     });
 

@@ -5,6 +5,7 @@ import { OSM } from 'ol/source';
 import { fromLonLat } from 'ol/proj';
 
 import getVectorLayer from './icons';
+import showPopup from './popup';
 
 const mapConfig = {
 	target: 'map',
@@ -25,4 +26,14 @@ const mapConfig = {
 getVectorLayer().then(vectorLayer => {
 	mapConfig.layers.push(vectorLayer);
 	const map = new Map(mapConfig);
+
+	// mostrar popup
+	map.on('click', showPopup);
+
+	// Establecer cursor en poiner al pasar el mouse en un icono
+	map.on('pointermove', (e) => {
+		const pixel = map.getEventPixel(e.originalEvent);
+		const hit = map.hasFeatureAtPixel(pixel);
+		map.getTargetElement().style.cursor = hit ? 'pointer' : '';
+	});
 });
