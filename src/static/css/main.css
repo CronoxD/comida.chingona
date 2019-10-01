@@ -7,7 +7,14 @@ body {
 }
 
 .content {
-    margin: 0 30px;
+    margin: 0 30px 100px;
+}
+
+.card {
+    padding: 10px;
+    background: white;
+    box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+    border-radius: 8px;
 }
 
 .title {
@@ -15,22 +22,14 @@ body {
 }
 
 .map {
-    padding: 10px;
-    background: white;
-    box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
-    border-radius: 8px;
     margin-bottom: 40px;
     position: relative;
 }
 
 .popup {
     position: absolute;
-    padding: 9px;
     width: 30em;
-    background: white;
-    box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
     z-index: 1060;
-    border-radius: 8px;
     font-size: 12px;
 }
 
@@ -48,4 +47,31 @@ body {
     border-left-color: transparent;
     border-top-color: transparent;
     border-bottom-color: transparent;
+}
+
+.form-map {
+    width: 100%;
+    margin-left: 10px;
+}
+
+.form-container {
+    display: flex;
+}
+
+.form {
+    text-align: center;
+}
+
+.form form{
+    margin-bottom: 40px;
+}
+
+.form label {
+    display: block;
+    margin: 10px 0;
+}
+.form input, .form textarea {
+    border-radius: 8px;
+    border: 1px solid lightgray;
+    padding: 0.6em;
 }

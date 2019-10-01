@@ -2,6 +2,7 @@
 # Django
 from django.shortcuts import render
 from django.views import View
+from django.views.generic import TemplateView
 
 # Rest framework
 from rest_framework import viewsets
@@ -13,9 +14,8 @@ from applications.maps.models import FoodLocation
 from applications.maps.serializers import FoodLocationSerializer
 
 
-class Lugares(View):
-    def get(self, request):
-        return render(request, template_name='maps/map.html')
+class Lugares(TemplateView):
+    template_name='maps/map.html'
 
 
 class LugaresViewSet(viewsets.ModelViewSet):

@@ -1,2 +1,1 @@
-from applications.maps.views.home import home
-from applications.maps.views.home2 import home2
+from applications.maps.views.lugares import Lugares, LugaresViewSet
