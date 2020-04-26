@@ -27,11 +27,13 @@ getVectorLayer().then(vectorLayer => {
 	mapConfig.layers.push(vectorLayer);
 	const map = new Map(mapConfig);
 
-	// mostrar popup
-	map.on('click', showPopup);
-
-	// Establecer cursor en poiner al pasar el mouse en un icono
+	// map.on('pointermove', showPopup);
+	
 	map.on('pointermove', (e) => {
+		// mostrar popup
+		showPopup(e);
+
+		// Establecer cursor en poiner al pasar el mouse en un icono
 		const pixel = map.getEventPixel(e.originalEvent);
 		const hit = map.hasFeatureAtPixel(pixel);
 		map.getTargetElement().style.cursor = hit ? 'pointer' : '';

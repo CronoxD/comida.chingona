@@ -5,12 +5,12 @@
 {% endblock %}
 
 {% block content %}
+    <h2 class="title">Agregar lugar</h2>
+    {% include 'maps/form_place.html' %}
     <h1 class="title">Lugares de comida chingona</h1>
     <div class="map card" id="map">
         <div id="popup" class="card popup">
         </div>
     </div>
 
-    <h2 class="title">Agregar lugar</h2>
-    {% include 'maps/form_place.html' %}
 {% endblock %}

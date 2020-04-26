@@ -6,7 +6,7 @@ __pycache__/
 *.mo
 
 # Django static files
-src/static/
+src/static/dist
 
 # Files for customer
 src/locale/*/LC_MESSAGES/django.po
